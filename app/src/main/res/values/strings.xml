@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WeaponDetectionFinalProject</string>
+    <string name="go_to_weapon_detection">Go To Weapon Detection</string>
+    <string name="weapon_detection">Weapon Detection</string>
+    <string name="predict">predict</string>
+    <string name="weapon_image_view">Weapon Image View</string>
+</resources>
