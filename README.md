@@ -16,8 +16,8 @@ Model Training Notebooks for each model will be sent thru message
 
 ## 📌Sample Outputs
 <div style="display: flex; justify-content: space-between;">
-  <img src="/app/src/main/assets/output-1.jpg" alt="Sample Output 1" width="200" style="margin-right: 150px;">&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="/app/src/main/assets/output-2.jpg" alt="Sample Output 2" width="200" style="margin-right: 150px;">&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="/app/src/main/assets/output-3.jpg" alt="Sample Output 3" width="200" style="margin-right: 150px;">&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="/app/src/main/assets/output-4.jpg" alt="Sample Output 4" width="200" style="margin-right: 150px;">
+  <img src="/app/src/main/assets/output-1.jpg" alt="Sample Output 1" width="150" style="margin-right: 150px;">&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="/app/src/main/assets/output-2.jpg" alt="Sample Output 2" width="150" style="margin-right: 150px;">&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="/app/src/main/assets/output-3.jpg" alt="Sample Output 3" width="150" style="margin-right: 150px;">&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="/app/src/main/assets/output-4.jpg" alt="Sample Output 4" width="150" style="margin-right: 150px;">
 </div>
