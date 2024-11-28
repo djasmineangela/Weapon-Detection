@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
@@ -20,7 +21,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.vision.weapondetection.helper.Recognition;
-import com.vision.weapondetection.helper.Yolov5TFLiteDetector;
+import com.vision.weapondetection.helper.TFLiteDetector;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,8 +30,9 @@ public class WeaponDetection extends AppCompatActivity {
 
     private static final int REQUEST_PICK_IMAGE = 1000;
     ImageView imageView;
+    TextView altText;
     Bitmap bitmap;
-    Yolov5TFLiteDetector yolov5TFLiteDetector;
+    TFLiteDetector tfLiteDetector;
     Paint boxPaint = new Paint();
     Paint textPain = new Paint();
 
@@ -46,10 +48,11 @@ public class WeaponDetection extends AppCompatActivity {
         });
 
         imageView = findViewById(R.id.imageView);
+        altText = findViewById(R.id.altText);
 
-        yolov5TFLiteDetector = new Yolov5TFLiteDetector();
-        yolov5TFLiteDetector.setModelFile("best-fp16-1.tflite");
-        yolov5TFLiteDetector.initialModel(this);
+        tfLiteDetector = new TFLiteDetector();
+        tfLiteDetector.setModelFile("best-fp16-1.tflite");
+        tfLiteDetector.initialModel(this);
 
         boxPaint.setStrokeWidth(3);
         boxPaint.setStyle(Paint.Style.STROKE);
@@ -76,6 +79,8 @@ public class WeaponDetection extends AppCompatActivity {
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
                     imageView.setImageBitmap(bitmap);
+                    altText.setVisibility(View.GONE);
+
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -84,7 +89,7 @@ public class WeaponDetection extends AppCompatActivity {
     }
 
     public void predict(View view){
-        ArrayList<Recognition> recognitions =  yolov5TFLiteDetector.detect(bitmap);
+        ArrayList<Recognition> recognitions =  tfLiteDetector.detect(bitmap);
         Bitmap mutableBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
         Canvas canvas = new Canvas(mutableBitmap);
 

@@ -8,12 +8,25 @@
     tools:context=".WeaponDetection">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/imageView"
-        android:background="#8BC34A"
-        android:onClick="onPickImage"
-        android:contentDescription="@string/weapon_image_view" />
+        android:background="#FFFFFF"
+        android:contentDescription="@string/weapon_image_view"
+        android:onClick="onPickImage" />
+
+    <TextView
+        android:id="@+id/altText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_margin="1dp"
+        android:gravity="center"
+        android:text="@string/altText_image_pick"
+        android:textColor="#000000" />
 
     <Button
         android:layout_width="wrap_content"

@@ -4,4 +4,5 @@
     <string name="weapon_detection">Weapon Detection</string>
     <string name="predict">predict</string>
     <string name="weapon_image_view">Weapon Image View</string>
+    <string name="altText_image_pick">Click anywhere to choose a photo</string>
 </resources>
